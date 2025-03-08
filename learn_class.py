@@ -29,8 +29,15 @@ class Dog(Animal):
     # Override parent's method
     def make_sound(self):
         return "Woof!"
-
-# Creating and using instances
+    
+class Cat(Animal):
+    def __init__(self, name, age, color):
+        super().__init__(name,age)
+        self.color = color
+    def intro_self(self):
+        print(f"i am {self.name}, a beautiful {self.color} cat belonging to Hiccup")
+    
+        
 if __name__ == "__main__":
     # Create an Animal instance
     generic_animal = Animal("Generic", 5)
@@ -42,6 +49,11 @@ if __name__ == "__main__":
     print(my_dog)
     print(f"{my_dog.name} says: {my_dog.make_sound()}")
     print(f"Breed: {my_dog.breed}")
+    
+    my_cat = Cat("Buddy", 3, "yellow")
+    print(f"my cat name is {my_cat.name}")
+    my_cat.intro_self()
+    
     
     # Demonstrate class attribute
     print(f"Total number of animals created: {Animal.species_count}")
